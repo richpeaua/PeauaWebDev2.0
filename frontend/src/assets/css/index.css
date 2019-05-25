@@ -117,11 +117,22 @@
 	grid-column: 1;
 	grid-row: 1;
 	margin-left: 15%;
+	margin-top: -2%;
 	position: fixed;
 }
 
 .social-media-link {
-	padding-top: 50%;
+	margin-top: 50%;
+}
+
+.social-media-img {
+	width: 80px;
+	height: 80px;
+}
+
+.social-media-img:hover {
+	width: 90px;
+	height: 90px;
 }
 
 .blog-post-wrapper {
