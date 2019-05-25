@@ -136,5 +136,5 @@ REST_FRAMEWORK = {
 TAGGIT_CASE_INSENSITIVE = True
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000', 'https://Peaua.io',
+    'http://localhost:3000', 'https://peaua.io',
     )
