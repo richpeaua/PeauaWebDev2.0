@@ -1,0 +1,167 @@
+
+/*********************************
+*                                *
+*       Page Header Styles       *
+*                                *
+**********************************/
+
+.header, .navbar {
+	background-color: rgb(255, 255, 255, 0.9);
+	align-content: center;
+  	margin-left: calc(50% - 50.4vw);
+ 	width: 100vw;
+    position: fixed;
+}
+
+.title {
+	text-decoration: none;
+	color: black;
+}
+
+.header {
+	margin-top: .1%;
+}
+
+.header h1 {
+	margin-left: 5%;
+	font-size: 255%;
+}
+
+/*********************************
+*                                *
+*         NavBar Styles          *
+*                                *
+**********************************/
+
+.navbar {
+	margin-top: -20px;
+	text-align: center;
+	background-color: blue;
+	box-shadow: 1px 5px 9px #888888;
+	margin-top: 4.5%;
+}
+
+.NavBar ul  {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.NavBar li {
+	display: inline-block;
+	margin-left: 10%;
+}
+
+
+.NavBar a {
+	display: inline-block;
+	padding: 8px;
+	font-size: 20px;
+	background-color: blue;
+	color: white;
+	text-decoration: none;
+}
+
+.NavBar a:hover {
+	display: block;
+	padding: 8px;
+	font-size: 30px;
+	font-weight: bold;
+	font-style: italic;
+}
+
+/*********************************
+*                                *
+*    Main Content Body Styles    *
+*                                *
+**********************************/
+
+.content {
+	text-align: left;
+	/*margin: 0 auto;*/
+	overflow-y: auto;
+	margin-top:7%;
+	height: 90em;
+}
+
+.content ul {
+	list-style-type: none;
+}
+
+.content h1 {
+	font-size: 450%;
+	margin-bottom: 9%;
+	text-align: center;
+	column-count: 2;
+}
+
+/*********************************
+*                                *
+*        Blog Page Styles        *
+*                                *
+**********************************/
+
+.blog-main h1 {
+	margin-left: 35%;
+}
+
+.blog-wrapper {
+	display: grid;
+	grid-template-columns: 27% 47%;
+	grid-gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
+	margin-top: -3%;
+}
+
+.social-media-wrapper {
+	grid-column: 1;
+	grid-row: 1;
+	margin-left: 15%;
+	position: fixed;
+}
+
+.social-media-link {
+	padding-top: 50%;
+}
+
+.blog-post-wrapper {
+	grid-column: 2;
+	grid-row: 1;
+}
+
+.blog-post {
+	font-size: 40px;
+}
+
+.blog-post a {
+	text-decoration: none;
+	color: black;
+}
+
+.blog-post-container {
+	border-bottom: thin solid;
+	margin-bottom: 8%;
+}
+
+.published {
+	font-style: italic;
+	color: grey;
+}
+
+.tag-cont {
+	margin-left: -4%;
+}
+
+.tag {
+	display: inline-block;
+	margin-left: 10px;
+	padding: 5px 11px 5px 11px;
+	margin-bottom: 15px;
+	border: thin solid;
+}
+
+
+
+
+
+
