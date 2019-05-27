@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {
   Route,
   Link,
-  BrowserRouter,
+  HashRouter,
   Switch
 } from "react-router-dom";
 import './assets/css/index.css';
@@ -17,7 +17,7 @@ class BlogRoot extends React.Component {
     
 
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className="header">
           
           <h1><Link to='/' className='title'>Peaua.io</Link></h1>
@@ -37,7 +37,7 @@ class BlogRoot extends React.Component {
             <Route component={ NotFound }/>
           </Switch>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     )
   }
 
