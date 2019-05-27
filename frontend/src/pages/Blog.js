@@ -10,7 +10,7 @@ class Blog extends React.Component {
   };
 
   componentDidMount(){
-    axios.get('http://localhost:8000/api/posts.json')
+    axios.get('http://api.peaua.io:8000/api/posts.json')
     .then(res => {
       const posts = res.data;
       this.setState({ posts });
