@@ -51,6 +51,7 @@ class Home extends React.Component {
             <Route exact path='/'/>
             <Route path='/Projects/'/>
             <Route path='/Blog/' render={(props) => <Blog posts={this.state.posts}/> }/>
+            <Route component={ NotFound } />
           </Switch>
         </div>
       </HashRouter>
