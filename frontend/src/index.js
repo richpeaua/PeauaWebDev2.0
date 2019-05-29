@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 import {
   Route,
   Link,
@@ -10,9 +11,25 @@ import './assets/css/index.css';
 import Blog from './pages/Blog.js';
 import NotFound from './pages/NotFound.js';
 import NavBar from './components/NavBar.js';
+import BlogPost from './pages/BlogPost.js';
 
-class BlogRoot extends React.Component {
+class Home extends React.Component {
   
+  constructor(props) {
+    super(props);
+    this.state = {
+    posts: []
+    };
+  }
+
+  componentDidMount(){
+    axios.get('http://localhost:8000/api/posts.json')
+    .then(res => {
+      const posts = res.data;
+      this.setState({ posts });
+    })
+  }
+
   render() {
     
 
@@ -31,10 +48,9 @@ class BlogRoot extends React.Component {
 
         <div className="content">
           <Switch>
-            <Route exact path='/Blog' component={ Blog }/>
-            <Route path='/Projects'/>
-            <Route path='/' />
-            <Route component={ NotFound }/>
+            <Route exact path='/'/>
+            <Route path='/Projects/'/>
+            <Route path='/Blog/' render={(props) => <Blog posts={this.state.posts}/> }/>
           </Switch>
         </div>
       </HashRouter>
@@ -44,7 +60,7 @@ class BlogRoot extends React.Component {
 }
 
 ReactDOM.render(
-  <BlogRoot />,
+  <Home />,
   document.getElementById('root')
   );
 
