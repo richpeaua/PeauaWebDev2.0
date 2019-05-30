@@ -13,7 +13,7 @@ class Blog extends React.Component {
   blogPostWrapper = () => {
     return (
       <div className='blog-post-wrapper'>
-      <h1>Blog</h1>
+      <h1 className='blog-title'>Blog</h1>
         <ul>
           { this.props.posts.map(post =>
           <div className='blog-post-container'>

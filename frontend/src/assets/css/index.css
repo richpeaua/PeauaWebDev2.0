@@ -4,6 +4,8 @@
 *                                *
 **********************************/
 
+
+
 .header, .navbar {
 	background-color: rgb(255, 255, 255, 0.9);
 	align-content: center;
@@ -33,7 +35,6 @@
 **********************************/
 
 .navbar {
-	margin-top: -20px;
 	text-align: center;
 	background-color: blue;
 	box-shadow: 1px 5px 9px #888888;
@@ -43,31 +44,25 @@
 
 .NavBar ul  {
 	list-style-type: none;
-	padding: 0;
-	margin: 0;
+	padding: 6px;
+	margin: 3px;
 }
 
 .NavBar li {
 	display: inline-block;
-	margin-left: 10%;
 }
 
 
 .NavBar a {
-	display: inline-block;
-	padding: 8px;
 	font-size: 20px;
-	background-color: blue;
 	color: white;
 	text-decoration: none;
+	margin-right: 3em;
 }
 
 .NavBar a:hover {
-	display: block;
-	padding: 8px;
 	font-size: 30px;
 	font-weight: bold;
-	font-style: italic;
 }
 
 /*********************************
@@ -77,7 +72,6 @@
 **********************************/
 
 .content {
-	text-align: left;
 	/*margin: 0 auto;*/
 	overflow-y: auto;
 	margin-top:7%;
@@ -89,9 +83,7 @@
 }
 
 .content h1 {
-	font-size: 450%;
-	margin-bottom: 9%;
-	text-align: center;
+
 	column-count: 2;
 }
 
@@ -101,13 +93,10 @@
 *                                *
 **********************************/
 
-.blog-main h1 {
-	margin-left: 35%;
-}
 
 .blog-wrapper {
 	display: grid;
-	grid-template-columns: 27% 47%;
+	grid-template-columns: 25% 55%;
 	grid-gap: 10px;
 	grid-auto-rows: minmax(100px, auto);
 	margin-top: 6%;
@@ -116,23 +105,22 @@
 .social-media-wrapper {
 	grid-column: 1;
 	grid-row: 1;
-	margin-left: 15%;
+	margin-left: 12%;
 	margin-top: -1%;
 	position: fixed;
 }
 
-.social-media-link {
-	margin-top: 50%;
-}
 
 .social-media-img {
 	width: 45px;
 	height: 45px;
+	padding-top: 55px;
 }
 
 .social-media-img:hover {
-	width: 60px;
-	height: 60px;
+	width: 55px;
+	height: 55px;
+	vertical-align: top;
 }
 
 .blog-post-wrapper {
@@ -142,7 +130,12 @@
 }
 
 .blog-post-wrapper h1 {
-	margin-top: -7%;
+	margin-top: -1%;
+}
+
+.blog-title {
+	font-size: 400%;
+	margin-left: 30%;
 }
 
 .blog-post {
@@ -156,7 +149,7 @@
 
 .blog-post-container {
 	border-bottom: thin solid;
-	margin-bottom: 8%;
+	margin-bottom: 14%;
 }
 
 .published {
@@ -171,15 +164,52 @@
 .tag {
 	display: inline-block;
 	margin-left: 10px;
-	padding: 5px 11px 5px 11px;
+	padding: 3px 14px 3px 14px;
 	margin-bottom: 15px;
 	border: thin solid;
+	border-radius: 3px;
+	background-color: #f8e9a0;
+	box-shadow: 2px 3px 5px 1px #f76d6d;
+
+}
+
+
+
+/*******************************
+*                              *  
+*     Post Page Styles         *
+*                              *
+********************************/
+
+#post-title {
+	font-size: 300%;
+	color: black;
+	margin-bottom: -1%;
+	width: 125%;
+}
+
+.post-published {
+	font-size: 20px;
+	color: grey;
+	font-style: italic;
+}
+
+.post-tag-wrapper {
+	border-bottom: thin solid;
+	margin: -8px 0px 0px -3x;
+}
+
+#post-tag {
+	margin-bottom: -5%;
+	margin-right: 7%;
+	margin-left: -5%;
 }
 
 /* Small notebooks and tablets */
 @media only screen and (max-width: 1174px) {
 	.navbar {margin-top: 9%;}
 	.header h1 {margin-left: 39%}
+	.blog-wrapper {margin-top: 15%}
 }
 
 /* Mobile phones */
@@ -188,14 +218,19 @@
 		margin-top: 11%;
 		margin-left: calc(50% - 51.6vw);
 	}
+
+	.navbar a:hover {font-size: 23px}
 	.header {margin-top: -9%;}
 	.header h1 {margin-left: 34%}
-	.social-media-wrapper {margin-left: 0.001%}
-	.blog-wrapper {
-		grid-template-columns: 20% 55%;
-		margin-top: 15%;
+	.social-media-wrapper {
+		display: none;
 	}
-
+	.blog-wrapper {
+		grid-template-columns: 15% 70%;
+		margin-top: 25%;
+	}
+	#post-title {width: 50%;}
+    
 }
 
 

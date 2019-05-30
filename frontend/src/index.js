@@ -34,6 +34,7 @@ class Home extends React.Component {
     
 
     return (
+      <div className="main">
       <HashRouter>
         <div className="header">
           
@@ -55,6 +56,7 @@ class Home extends React.Component {
           </Switch>
         </div>
       </HashRouter>
+      </div>
     )
   }
 

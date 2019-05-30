@@ -14,14 +14,30 @@ class BlogPost extends React.Component {
 
 	        }
         } else {
-	        post = {'title' : 'default'}
+	        post = {
+
+            'title' : 'default',
+            'published' : 'default',
+            'body' : 'default',
+            'tags' : ['def1', 'def2']
+
+          }
 	            
 	    }
         return (
 
           <div className='blog-post-wrapper'>
-            <h1>{post.title}</h1>
-            <h2>{post.published}</h2>
+            <h1 id='post-title'>{post.title}</h1>
+            <h2 className='post-published'>{post.published}</h2>
+            
+            <div className='post-tag-wrapper'>
+              <ul>{ post.tags.map(tag => 
+                <li className='tag' id='post-tag'>{tag}</li>)
+                   
+              }</ul>
+  
+            </div>
+            
             <p>{post.body}</p>
           </div>
         )
