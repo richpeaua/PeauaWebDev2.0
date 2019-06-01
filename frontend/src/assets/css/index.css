@@ -61,7 +61,7 @@
 }
 
 .NavBar a:hover {
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: bold;
 }
 
@@ -112,14 +112,14 @@
 
 
 .social-media-img {
-	width: 45px;
-	height: 45px;
+	width: 55px;
+	height: 55px;
 	padding-top: 55px;
 }
 
 .social-media-img:hover {
-	width: 55px;
-	height: 55px;
+	width: 60px;
+	height: 60px;
 	vertical-align: top;
 }
 

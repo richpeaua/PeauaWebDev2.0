@@ -10,3 +10,12 @@ class Post(models.Model):
 
 	def __str__(self):
 		return self.title
+
+class Project(models.Model):
+	title = models.CharField(max_length=120)
+	created = models.DateField()
+	image_path = models.CharField(max_length=120)
+	page_path = models.CharField(max_length=120)
+
+	def __str__(self):
+		return self.title
