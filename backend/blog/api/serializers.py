@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from rest_framework.exceptions import ParseError
-from blog.models import Post
+from blog.models import Post, Project
 from taggit_serializer.serializers import TagListSerializerField, TaggitSerializer
 
 '''class TagListSerializer(serializers.Field):
@@ -21,3 +21,8 @@ class PostSerializer(TaggitSerializer, serializers.ModelSerializer):
 	class Meta:
 		model = Post
 		fields = ('id', 'title', 'body', 'published', 'tags')
+
+class ProjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Project
+        fields = ('id', 'title', 'created', 'image_path', 'page_path')

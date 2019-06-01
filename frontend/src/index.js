@@ -23,7 +23,7 @@ class Home extends React.Component {
   }
 
   componentDidMount(){
-    axios.get('https://api.peaua.io/api/posts.json')
+    axios.get('http://localhost:8000/api/posts.json')
     .then(res => {
       const posts = res.data;
       this.setState({ posts });
