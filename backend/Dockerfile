@@ -1,17 +1,24 @@
 # Dockerfile
 
 # FROM directive instructing base image to build upon
-FROM python:3-onbuild
+FROM python:3.7-alpine
 
+WORKDIR /app
 # COPY gunicron startup script into known file location in container
+
+COPY requirements.txt /app/requirements.txt
+
+RUN pip install -r requirements.txt
+
 COPY start.sh /start.sh
 
-RUN chmod +x /start.sh
-
+COPY . /app/.
 # EXPOSE port 8000 to allow communication to/from server
 EXPOSE 8000
 
+RUN chmod +x /app/start.sh
+
 # CMD specifies the command to execute to start the server running
-CMD ["/start.sh"]
+CMD ["/app/start.sh"]
 
 
