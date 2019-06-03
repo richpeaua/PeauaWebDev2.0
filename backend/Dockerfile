@@ -6,7 +6,16 @@ FROM python:3.7-alpine
 WORKDIR /app
 # COPY gunicron startup script into known file location in container
 
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
 COPY requirements.txt /app/requirements.txt
+
+RUN apk update \
+    && apk add --virtual build-deps gcc python3-dev musl-dev \
+    && apk add postgresql-dev \
+    && pip install psycopg2 \
+    && apk del build-deps
 
 RUN pip install -r requirements.txt
 

@@ -1,10 +1,37 @@
 version: '3'
 
 services:
+  db:
+    image: postgres:11.2
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - database:/var/lib/postgresql/data
+
   backend:
     image: lpeaua/peauaio-backend:latest
+    build: ./backend
     ports: 
-      - "8000:8000"
+      - 8000:8000
+    environment:
+      - DEBUG=False
+      - SECRET_KEY=supersecret
+      - SQL_ENGINE=django.db.backends.postgresql_psycopg2
+      - SQL_DATABASE=peauaio
+      - SQL_USER=peauaio
+      - SQL_PASSWORD=peauaio
+      - SQL_HOST=db
+      - SQL_PORT=5432
+    depends_on:
+      - db
 
+  frontend:
+    image: lpeaua/peauaio-frontend:latest
+    build: ./frontend
+    ports:
+      - 3000:80
 
-
+volumes:
+  database:

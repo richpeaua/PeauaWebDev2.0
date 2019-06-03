@@ -12,6 +12,7 @@ django-cors-headers = "*"
 django-taggit = "*"
 django-taggit-serializer = "*"
 gunicorn = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
