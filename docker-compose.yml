@@ -2,36 +2,58 @@ version: '3'
 
 services:
   db:
-    image: postgres:11.2
+    image: postgres:11.2-alpine
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=postgres
+      - POSTGRES_DB=peauaio
     volumes:
-      - database:/var/lib/postgresql/data
+            - database:/var/lib/postgresql:Z
+    networks:
+      - nginx-proxy
 
   backend:
     image: lpeaua/peauaio-backend:latest
     build: ./backend
-    ports: 
-      - 8000:8000
+    expose: 
+      - 8000
     environment:
       - DEBUG=False
       - SECRET_KEY=supersecret
       - SQL_ENGINE=django.db.backends.postgresql_psycopg2
       - SQL_DATABASE=peauaio
-      - SQL_USER=peauaio
-      - SQL_PASSWORD=peauaio
+      - SQL_USER=postgres
       - SQL_HOST=db
       - SQL_PORT=5432
+      - VIRTUAL_HOST=api.peaua.io
+      - LETSENCRYPT_HOST=api.peaua.io
+      - LETSENCRYPT_EMAIL=lpeaua@gmail.com
+    networks:
+      - nginx-proxy
     depends_on:
       - db
 
   frontend:
     image: lpeaua/peauaio-frontend:latest
     build: ./frontend
-    ports:
-      - 3000:80
+    expose:
+      - 80
+    environment:
+      - VIRTUAL_HOST=peaua.io,www.peaua.io
+      - LETSENCRYPT_HOST=peaua.io
+      - LETSENCRYPT_EMAIL=lpeaua@gmail.com
+    networks:
+      - nginx-proxy
+    depends_on:
+      - backend
+    links:
+      - backend
+
+networks:
+  nginx-proxy:
+    external:
+      name: proxy_nginx-proxy
 
 volumes:
   database:
+    external: true
+
