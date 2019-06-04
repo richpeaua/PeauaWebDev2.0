@@ -171,7 +171,7 @@
 }
 
 .tag-cont {
-	margin-left: -4%;
+	margin-left: -6%;
 }
 
 .tag {
@@ -179,11 +179,10 @@
 	margin-left: 10px;
 	font-size: 20px;
 	padding: 0px 17px 0px 17px;
-	margin-bottom: 15px;
+	margin-bottom: -1%;
 	border-radius: 3px;
 	background-color: #f8e9a0;
 	box-shadow: 2px 3px 5px 1px #f76d6d;
-	margin: 2px 0 3px 0;
     font-weight: bold;
     -webkit-font-smoothing: antialiased;
     cursor: text;
