@@ -195,7 +195,7 @@
 }
 
 .post-tag-wrapper {
-	border-bottom: thin solid;
+	border-bottom: solid;
 	margin: -8px 0px 0px -3x;
 }
 
@@ -204,6 +204,8 @@
 	margin-right: 7%;
 	margin-left: -5%;
 }
+
+
 
 /* Small notebooks and tablets */
 @media only screen and (max-width: 1174px) {
