@@ -2,7 +2,8 @@ version: '3'
 
 services:
     nginx-proxy:
-        image: jwilder/nginx-proxy:alpine
+        image: peauaio-nginx-proxy
+        build: .
         restart: "always"
         ports:
          - "80:80" 
@@ -17,7 +18,7 @@ services:
          - "nginx-vhost:/etc/nginx/vhost.d"
          - "html:/usr/share/nginx/html"
          - "certs:/etc/nginx/certs:ro"
-         - "static:/opt/PeauaWebDev2.0/backend/static"
+         - "/opt/PeauaWebDev2.0/backend/static:/static"
 
     letsencrypt-nginx-proxy-companion:
         image: jrcs/letsencrypt-nginx-proxy-companion

@@ -1,0 +1,18 @@
+version: "3"
+
+service:
+  db:
+    image: postgres-backend
+    build: .
+    restart: always
+    environment:
+      - POSTGRES_USER=peauaio
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=peaua_db
+    volumes:
+      - peauaio_db:/var/lib/postgresql/data
+    networks:
+      - nginx-proxy
+
+volumes:
+  peauaio_db:

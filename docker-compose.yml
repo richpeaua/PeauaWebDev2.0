@@ -1,13 +1,16 @@
-version: '3'
+version: '3.1'
 
 services:
   db:
-    image: postgres:11.2-alpine
+    image: postgres-backend
+    build: ./db
+    restart: always
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_DB=peauaio
+      - POSTGRES_USER=peauaio    
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=peaua_db 
     volumes:
-            - database:/var/lib/postgresql:Z
+      - peauaio_db:/var/lib/postgresql/data
     networks:
       - nginx-proxy
 
@@ -20,8 +23,9 @@ services:
       - DEBUG=False
       - SECRET_KEY=supersecret
       - SQL_ENGINE=django.db.backends.postgresql_psycopg2
-      - SQL_DATABASE=peauaio
-      - SQL_USER=postgres
+      - SQL_DATABASE=peaua_db
+      - SQL_USER=peauaio
+      - SQL_PASSWORD=password
       - SQL_HOST=db
       - SQL_PORT=5432
       - VIRTUAL_HOST=api.peaua.io
@@ -54,6 +58,5 @@ networks:
       name: proxy_nginx-proxy
 
 volumes:
-  database:
-    external: true
+  peauaio_db:
 
