@@ -13,6 +13,7 @@ django-taggit = "*"
 django-taggit-serializer = "*"
 gunicorn = "*"
 psycopg2 = "*"
+django-pagedown = "*"
 
 [requires]
 python_version = "3.7"

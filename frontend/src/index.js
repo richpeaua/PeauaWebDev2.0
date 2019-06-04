@@ -11,7 +11,6 @@ import './assets/css/index.css';
 import Blog from './pages/Blog.js';
 import NotFound from './pages/NotFound.js';
 import NavBar from './components/NavBar.js';
-import BlogPost from './pages/BlogPost.js';
 
 class Home extends React.Component {
   

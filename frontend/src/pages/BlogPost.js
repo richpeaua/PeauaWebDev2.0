@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from "react-markdown";
 
 class BlogPost extends React.Component {
 
@@ -37,8 +38,9 @@ class BlogPost extends React.Component {
               }</ul>
   
             </div>
-            
-            <p>{post.body}</p>
+            <div >
+            <p>{<ReactMarkdown source={post.body} escapeHtml={false} />}</p>
+            </div>
           </div>
         )
 
